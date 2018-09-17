@@ -1,0 +1,17 @@
+.\objects\buttons.o: Code\src\buttons.c
+.\objects\buttons.o: .\Code\inc\buttons.h
+.\objects\buttons.o: .\CMSIS\inc\stm32f30x.h
+.\objects\buttons.o: .\CMSIS\inc\core_cm4.h
+.\objects\buttons.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\buttons.o: .\CMSIS\inc\core_cmInstr.h
+.\objects\buttons.o: .\CMSIS\inc\core_cmFunc.h
+.\objects\buttons.o: .\CMSIS\inc\core_cmSimd.h
+.\objects\buttons.o: .\CMSIS\inc\system_stm32f30x.h
+.\objects\buttons.o: .\Code\inc\main.h
+.\objects\buttons.o: .\Code\inc\mcu_ini.h
+.\objects\buttons.o: .\Std_Periph\inc\stm32f30x_rcc.h
+.\objects\buttons.o: .\Std_Periph\inc\stm32f30x_gpio.h
+.\objects\buttons.o: .\Code\inc\main.h
+.\objects\buttons.o: .\Code\inc\pwm.h
+.\objects\buttons.o: .\Std_Periph\inc\stm32f30x_tim.h
+.\objects\buttons.o: .\Code\inc\buttons.h
