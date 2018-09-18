@@ -14,5 +14,5 @@ void LED_On(void);
 void LED_Off(void);
 void Set_PWM_A(uint8_t temp);
 
-void Hard_PWM(void);
+//void Hard_PWM(void);
 #endif

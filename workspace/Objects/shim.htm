@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\shim.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\shim.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Fri Sep 14 14:13:41 2018
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Tue Sep 18 15:52:51 2018
 <BR><P>
 <H3>Maximum Stack Usage =         36 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -555,106 +555,87 @@ Global Symbols
 
 <P><STRONG><a name="[9c]"></a>__use_no_semihosting_swi</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
 
-<P><STRONG><a name="[9d]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, indicate_semi.o(.text), UNUSED)
-
-<P><STRONG><a name="[66]"></a>BUTTON</STRONG> (Thumb, 98 bytes, Stack size 8 bytes, buttons.o(i.BUTTON))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = BUTTON
-</UL>
-<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ToggleBits
-<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ReadInputDataBit
-</UL>
-<BR>[Called By]<UL><LI><a href="#[b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Handler
-</UL>
-
-<P><STRONG><a name="[69]"></a>Button_ini</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, mcu_ini.o(i.Button_ini))
+<P><STRONG><a name="[66]"></a>Button_ini</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, mcu_ini.o(i.Button_ini))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = Button_ini &rArr; GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_AHBPeriphClockCmd
-<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_AHBPeriphClockCmd
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[6c]"></a>Buttons_ini</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, mcu_ini.o(i.Buttons_ini))
+<P><STRONG><a name="[9d]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, indicate_semi.o(.text), UNUSED)
+
+<P><STRONG><a name="[69]"></a>Buttons_ini</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, mcu_ini.o(i.Buttons_ini))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = Buttons_ini &rArr; GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_AHBPeriphClockCmd
-<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_AHBPeriphClockCmd
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[6b]"></a>GPIO_Init</STRONG> (Thumb, 150 bytes, Stack size 20 bytes, stm32f30x_gpio.o(i.GPIO_Init))
+<P><STRONG><a name="[68]"></a>GPIO_Init</STRONG> (Thumb, 150 bytes, Stack size 20 bytes, stm32f30x_gpio.o(i.GPIO_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = GPIO_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M_2_ini
-<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M_1_ini
-<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LEDs_ini
-<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Buttons_ini
-<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button_ini
+<BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M_2_ini
+<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M_1_ini
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LEDs_ini
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Buttons_ini
+<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button_ini
 </UL>
 
-<P><STRONG><a name="[67]"></a>GPIO_ReadInputDataBit</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f30x_gpio.o(i.GPIO_ReadInputDataBit))
-<BR><BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BUTTON
+<P><STRONG><a name="[73]"></a>GPIO_ReadInputDataBit</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f30x_gpio.o(i.GPIO_ReadInputDataBit))
+<BR><BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;systick_kurok
+<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;systick_button
+<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;systick_SA2_1_
+<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;systick_SA2_0_
+<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;systick_SA1_1_
 </UL>
 
-<P><STRONG><a name="[68]"></a>GPIO_ToggleBits</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f30x_gpio.o(i.GPIO_ToggleBits))
-<BR><BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BUTTON
-</UL>
-
-<P><STRONG><a name="[73]"></a>Hard_PWM</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, pwm.o(i.Hard_PWM))
-<BR><BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-</UL>
-
-<P><STRONG><a name="[6d]"></a>LEDs_ini</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, mcu_ini.o(i.LEDs_ini))
+<P><STRONG><a name="[6a]"></a>LEDs_ini</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, mcu_ini.o(i.LEDs_ini))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = LEDs_ini &rArr; GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_AHBPeriphClockCmd
-<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_AHBPeriphClockCmd
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[6e]"></a>M_1_ini</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, mcu_ini.o(i.M_1_ini))
+<P><STRONG><a name="[6b]"></a>M_1_ini</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, mcu_ini.o(i.M_1_ini))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = M_1_ini &rArr; GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_AHBPeriphClockCmd
-<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_AHBPeriphClockCmd
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[6f]"></a>M_2_ini</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, mcu_ini.o(i.M_2_ini))
+<P><STRONG><a name="[6c]"></a>M_2_ini</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, mcu_ini.o(i.M_2_ini))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = M_2_ini &rArr; GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_AHBPeriphClockCmd
-<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_AHBPeriphClockCmd
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[71]"></a>PWM_LED_Off</STRONG> (Thumb, 62 bytes, Stack size 0 bytes, pwm.o(i.PWM_LED_Off))
-<BR><BR>[Called By]<UL><LI><a href="#[b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Handler
+<P><STRONG><a name="[67]"></a>RCC_AHBPeriphClockCmd</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f30x_rcc.o(i.RCC_AHBPeriphClockCmd))
+<BR><BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M_2_ini
+<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M_1_ini
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LEDs_ini
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Buttons_ini
+<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button_ini
 </UL>
 
-<P><STRONG><a name="[70]"></a>PWM_LED_On</STRONG> (Thumb, 66 bytes, Stack size 0 bytes, pwm.o(i.PWM_LED_On))
-<BR><BR>[Called By]<UL><LI><a href="#[b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Handler
+<P><STRONG><a name="[b]"></a>SysTick_Handler</STRONG> (Thumb, 60 bytes, Stack size 8 bytes, main.o(i.SysTick_Handler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = SysTick_Handler &rArr; systick_kurok
 </UL>
-
-<P><STRONG><a name="[6a]"></a>RCC_AHBPeriphClockCmd</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f30x_rcc.o(i.RCC_AHBPeriphClockCmd))
-<BR><BR>[Called By]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M_2_ini
-<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M_1_ini
-<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LEDs_ini
-<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Buttons_ini
-<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button_ini
-</UL>
-
-<P><STRONG><a name="[b]"></a>SysTick_Handler</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, main.o(i.SysTick_Handler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = SysTick_Handler &rArr; BUTTON
-</UL>
-<BR>[Calls]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWM_LED_On
-<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWM_LED_Off
-<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BUTTON
+<BR>[Calls]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;systick_kurok
+<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;systick_button
+<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;systick_SA2_1_
+<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;systick_SA2_0_
+<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;systick_SA1_1_
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f303xc.o(RESET)
 </UL>
@@ -665,17 +646,56 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f303xc.o(.text)
 </UL>
-<P><STRONG><a name="[5e]"></a>main</STRONG> (Thumb, 120 bytes, Stack size 0 bytes, main.o(i.main))
+<P><STRONG><a name="[5e]"></a>main</STRONG> (Thumb, 116 bytes, Stack size 0 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = main &rArr; M_2_ini &rArr; GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M_2_ini
-<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M_1_ini
-<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LEDs_ini
-<LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Hard_PWM
-<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Buttons_ini
-<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button_ini
+<BR>[Calls]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M_2_ini
+<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M_1_ini
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LEDs_ini
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Buttons_ini
+<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button_ini
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
+</UL>
+
+<P><STRONG><a name="[71]"></a>systick_SA1_1_</STRONG> (Thumb, 106 bytes, Stack size 8 bytes, sa1_1.o(i.systick_SA1_1_))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = systick_SA1_1_
+</UL>
+<BR>[Calls]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ReadInputDataBit
+</UL>
+<BR>[Called By]<UL><LI><a href="#[b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Handler
+</UL>
+
+<P><STRONG><a name="[70]"></a>systick_SA2_0_</STRONG> (Thumb, 106 bytes, Stack size 8 bytes, sa2_0.o(i.systick_SA2_0_))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = systick_SA2_0_
+</UL>
+<BR>[Calls]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ReadInputDataBit
+</UL>
+<BR>[Called By]<UL><LI><a href="#[b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Handler
+</UL>
+
+<P><STRONG><a name="[6f]"></a>systick_SA2_1_</STRONG> (Thumb, 106 bytes, Stack size 8 bytes, sa2_1.o(i.systick_SA2_1_))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = systick_SA2_1_
+</UL>
+<BR>[Calls]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ReadInputDataBit
+</UL>
+<BR>[Called By]<UL><LI><a href="#[b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Handler
+</UL>
+
+<P><STRONG><a name="[6d]"></a>systick_button</STRONG> (Thumb, 106 bytes, Stack size 8 bytes, buttons.o(i.systick_button))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = systick_button
+</UL>
+<BR>[Calls]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ReadInputDataBit
+</UL>
+<BR>[Called By]<UL><LI><a href="#[b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Handler
+</UL>
+
+<P><STRONG><a name="[6e]"></a>systick_kurok</STRONG> (Thumb, 106 bytes, Stack size 8 bytes, kurok.o(i.systick_kurok))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = systick_kurok
+</UL>
+<BR>[Calls]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ReadInputDataBit
+</UL>
+<BR>[Called By]<UL><LI><a href="#[b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Handler
 </UL>
 
 <P><STRONG><a name="[58]"></a>_fp_init</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, fpinit.o(x$fpl$fpinit))

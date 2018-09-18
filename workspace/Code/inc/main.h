@@ -4,6 +4,11 @@
 #include "mcu_ini.h"
 #include "pwm.h"
 #include "buttons.h"
+#include "kurok.h"
+#include "SA1_1.h"
+#include "SA2_0.h"
+#include "SA2_1.h"
+
 //-----------------------------------------------------------------
 //
 //-----------------------------------------------------------------
@@ -62,7 +67,6 @@
 //-------------------------------------------------------------
 
 #define BUTTON_READ()					GPIO_ReadInputDataBit (GPIOA, GPIO_Pin_0)
-
 #define BUTTON_PRESSED_FLAG 	0
 #define BUTTON_UNPRESSED_FLAG	1
 
@@ -70,10 +74,21 @@
 //Zadayom funkthiyu chteniya kontsevicam
 //-------------------------------------------------------------
 
-#define START_READ()			GPIO_ReadInputDataBit (GPIOD, GPIO_Pin_15)
+#define KUROK_READ()			GPIO_ReadInputDataBit (GPIOD, GPIO_Pin_15)
+#define KUROK_PRESSED_FLAG 		0
+#define KUROK_UNPRESSED_FLAG	1
+
 #define SA_1_1_READ()			GPIO_ReadInputDataBit (GPIOD, GPIO_Pin_14)
+#define SA_1_1_PRESSED_FLAG 	0
+#define SA_1_1_UNPRESSED_FLAG	1
+
 #define SA_2_0_READ()			GPIO_ReadInputDataBit (GPIOD, GPIO_Pin_13)
+#define SA_2_0_PRESSED_FLAG 	0
+#define SA_2_0_UNPRESSED_FLAG	1
+
 #define SA_2_1_READ()			GPIO_ReadInputDataBit (GPIOD, GPIO_Pin_12)
+#define SA_2_1_PRESSED_FLAG 	0
+#define SA_2_1_UNPRESSED_FLAG	1
 
 //--------------------------------------------------------------------
 //vkl i vykl H-most portov

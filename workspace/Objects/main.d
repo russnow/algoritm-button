@@ -14,3 +14,7 @@
 .\objects\main.o: .\Code\inc\pwm.h
 .\objects\main.o: .\Std_Periph\inc\stm32f30x_tim.h
 .\objects\main.o: .\Code\inc\buttons.h
+.\objects\main.o: .\Code\inc\kurok.h
+.\objects\main.o: .\Code\inc\SA1_1.h
+.\objects\main.o: .\Code\inc\SA2_0.h
+.\objects\main.o: .\Code\inc\SA2_1.h

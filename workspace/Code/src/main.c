@@ -25,15 +25,19 @@ void SysTick_Handler(void)
 						
 						//--------------------------
 								//Systick_PWM();
-								PWM_LED_On();
-								PWM_LED_Off();
-								BUTTON();
+								//PWM_LED_On();
+								//PWM_LED_Off();
+								//BUTTON();
+								systick_button();
+								systick_kurok();
+								systick_SA2_1_();
+								systick_SA2_0_();
+								systick_SA1_1_();
 							
+								
 							
 					
-}
-						
-
+}					
 
 //------------------------------------------------------------------------------------------------
 //gdem poka delay count ne stanet raven nulyu
@@ -60,7 +64,7 @@ int main (void)
 		M_1_ini();
 		SysTick_Config(SystemCoreClock/1000); //initsializiruyem systemnyi timer //1ms	
 		
-		Hard_PWM();
+		//Hard_PWM();
 		Mode_count = DELAY;
 		Mode=MODE_GREEN_LD6;
 		
@@ -70,6 +74,7 @@ int main (void)
 		//---------------------------------------------------------------------------------
 		while(1)
 			{ 
+				//LED_state_Change();
 //				GREEN_LD6_ON();
 				//EN_2_ON();
 				//IN_3_ON();

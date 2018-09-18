@@ -421,6 +421,26 @@
               <FileType>1</FileType>
               <FilePath>.\Code\src\buttons.c</FilePath>
             </File>
+            <File>
+              <FileName>kurok.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Code\src\kurok.c</FilePath>
+            </File>
+            <File>
+              <FileName>SA1_1.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Code\src\SA1_1.c</FilePath>
+            </File>
+            <File>
+              <FileName>SA2_0.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Code\src\SA2_0.c</FilePath>
+            </File>
+            <File>
+              <FileName>SA2_1.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Code\src\SA2_1.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

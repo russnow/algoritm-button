@@ -1,6 +1,5 @@
 #include "buttons.h"
 
-
 uint8_t Pistolet=1 , Pulemet = 0;
 uint8_t Mode_vkl=0 , Mode_counter =0;
 
@@ -10,20 +9,17 @@ uint8_t Button_state=0;
 //------------------------------------------------------------------------------------------------
 //Functsiu budet vyzyvat kazduy 1ms
 //------------------------------------------------------------------------------------------------
-
-void BUTTON(void)
+/*void BUTTON(void)
 {
 						//----------------------
 						//Nazhatie i othatie cnopki
 						//----------------------
 						if (BUTTON_READ()==1)
 						{
-							
 												if (Button_count <5)
 												{
 													Button_count++;
-												}
-												
+												}					
 													else
 														if (Button_state ==0)
 													{
@@ -39,23 +35,21 @@ void BUTTON(void)
 										{
 											Button_count--;
 										}
-									
 									else
 										{
 											Button_state=0;
 										}
 								}
-								
-}
+}*/
+
 //----------------------------------------------
 //
 //-----------------------------------------------
-
 uint8_t counter=0;
 uint8_t ButtonState=0;
 uint8_t ButtonFlags[2];
 
-/*void systick_button (void)
+void systick_button (void)
 	
 {		
 		uint8_t temp;
@@ -70,7 +64,7 @@ uint8_t ButtonFlags[2];
 			{
 				if (ButtonState == 1)
 				{
-					ButtonFlags[BUTTON_UNPRESSED_FLAG]=1;
+					ButtonFlags[BUTTON_UNPRESSED_FLAG]++;
 				ButtonState = 0;
 				}
 			}
@@ -84,11 +78,44 @@ uint8_t ButtonFlags[2];
 				else
 				{
 					if (ButtonState == 0)
-						ButtonFlags[BUTTON_PRESSED_FLAG]=1;
+						ButtonFlags[BUTTON_PRESSED_FLAG]++;
 					ButtonState =1;
 				}
 			}
-}*/
+}
 
+//-------------------------------------------------------------
+//vozvrachaem znachenie s parapetrom num
+//-------------------------------------------------------------
+uint8_t getButtonFlag (uint8_t num)
+{
+	return ButtonFlags[num];
+}
 
+//-------------------------------------------------------------
+//sbrosit v 0
+//-------------------------------------------------------------
+void clearButtonFlag(uint8_t num)
+{
+	if (ButtonFlags[num]>0)
+	{
+	ButtonFlags[num] --;
+	}
+}
 
+//--------------------------------------------------------------
+//
+//--------------------------------------------------------------
+void LED_state_Change(void)
+{
+	if (getButtonFlag(BUTTON_PRESSED_FLAG)>0)
+	{
+		clearButtonFlag(BUTTON_PRESSED_FLAG);
+		GPIO_ToggleBits(GPIOE, GPIO_Pin_15);
+	}
+	if (getButtonFlag(BUTTON_UNPRESSED_FLAG)>0)
+	{
+		clearButtonFlag(BUTTON_UNPRESSED_FLAG);
+		GPIO_ToggleBits(GPIOE, GPIO_Pin_14);
+	}
+}

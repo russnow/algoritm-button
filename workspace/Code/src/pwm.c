@@ -112,9 +112,9 @@ void LED_Off(void)
 //
 //--------------------------------------------------------------------------------------
 
-void Hard_PWM(void)
+/*void Hard_PWM(void)
 {
-/*	TIM_TimeBaseInitTypeDef TIM_Time_user;
+	TIM_TimeBaseInitTypeDef TIM_Time_user;
 	GPIO_InitTypeDef GPIO_Init_LED;
 	TIM_OCInitTypeDef Hard_PWM_ini;
 	
@@ -148,5 +148,6 @@ void Hard_PWM(void)
 
 	TIM_OC4Init(TIM1,&Hard_PWM_ini);
 
-	TIM_Cmd(TIM1, ENABLE);*/
+	TIM_Cmd(TIM1, ENABLE);
 }
+*/

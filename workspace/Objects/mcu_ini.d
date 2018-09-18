@@ -15,3 +15,7 @@
 .\objects\mcu_ini.o: .\Code\inc\main.h
 .\objects\mcu_ini.o: .\Std_Periph\inc\stm32f30x_tim.h
 .\objects\mcu_ini.o: .\Code\inc\buttons.h
+.\objects\mcu_ini.o: .\Code\inc\kurok.h
+.\objects\mcu_ini.o: .\Code\inc\SA1_1.h
+.\objects\mcu_ini.o: .\Code\inc\SA2_0.h
+.\objects\mcu_ini.o: .\Code\inc\SA2_1.h
