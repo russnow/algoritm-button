@@ -1,6 +1,6 @@
 #include "buttons.h"
 
-uint8_t Pistolet=1 , Pulemet = 0;
+/*uint8_t Pistolet=1 , Pulemet = 0;
 uint8_t Mode_vkl=0 , Mode_counter =0;
 
 uint8_t Button_count=0; // ubirAYEM DREBEZG
@@ -9,7 +9,7 @@ uint8_t Button_state=0;
 //------------------------------------------------------------------------------------------------
 //Functsiu budet vyzyvat kazduy 1ms
 //------------------------------------------------------------------------------------------------
-/*void BUTTON(void)
+void BUTTON(void)
 {
 						//----------------------
 						//Nazhatie i othatie cnopki
@@ -49,6 +49,10 @@ uint8_t counter=0;
 uint8_t ButtonState=0;
 uint8_t ButtonFlags[2];
 
+
+//--------------------------------------------------------------------------
+//gasym drebezg knopki USER
+//--------------------------------------------------------------------------
 void systick_button (void)
 	
 {		
@@ -106,7 +110,7 @@ void clearButtonFlag(uint8_t num)
 //--------------------------------------------------------------
 //
 //--------------------------------------------------------------
-void LED_state_Change(void)
+/*void LED_state_Change(void)
 {
 	if (getButtonFlag(BUTTON_PRESSED_FLAG)>0)
 	{
@@ -118,4 +122,74 @@ void LED_state_Change(void)
 		clearButtonFlag(BUTTON_UNPRESSED_FLAG);
 		GPIO_ToggleBits(GPIOE, GPIO_Pin_14);
 	}
-}
+}*/
+
+
+//--------------------------------------------------------------------------
+//
+//--------------------------------------------------------------------------
+void Rezhim1(void) //menyaem natyazhenie pryzhiny
+{
+	//uint8_t Mode_new = 0;
+	//uint8_t Mode=MODE_PISTOLET;
+	//if (getButtonFlag(BUTTON_PRESSED_FLAG)>0)
+	//{
+		
+		
+			
+			if (getButtonFlag(BUTTON_PRESSED_FLAG)>0) //esli knopka zazhata
+			{
+				clearButtonFlag(BUTTON_PRESSED_FLAG);
+					
+				GREEN_LD6_ON();
+				ORANGE_LD8_OFF();
+				
+				
+			}
+				if (getButtonFlag(BUTTON_UNPRESSED_FLAG)>0)
+			{
+			clearButtonFlag(BUTTON_UNPRESSED_FLAG);
+				
+				
+					//ORANGE_LD8_ON();
+					//GREEN_LD6_OFF();
+			}
+
+					}
+
+					
+//--------------------------------------------------------------------------
+//
+//--------------------------------------------------------------------------
+					
+					void Rezhim2(void)
+{
+	//uint8_t Mode_new = 0;
+	//uint8_t Mode=MODE_PISTOLET;
+	//if (getButtonFlag(BUTTON_PRESSED_FLAG)>0)
+	//{
+		
+		
+			
+			if (getButtonFlag(BUTTON_PRESSED_FLAG)>0)
+			{
+				clearButtonFlag(BUTTON_PRESSED_FLAG);
+					
+				GREEN_LD6_OFF();
+				ORANGE_LD8_ON();
+				
+				
+			}
+				if (getButtonFlag(BUTTON_UNPRESSED_FLAG)>0)
+			{
+			clearButtonFlag(BUTTON_UNPRESSED_FLAG);
+	
+					//ORANGE_LD8_ON();
+					//GREEN_LD6_OFF();
+			}
+
+					}
+				
+			
+		
+			

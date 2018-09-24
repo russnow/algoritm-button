@@ -3,7 +3,10 @@ uint8_t counter2=0;
 uint8_t SA1_1_State=0;
 uint8_t SA1_1_Flags[2];
 
-void systick_SA1_1_(void)
+//------------------------------------------------------
+//gasym drebezg
+//------------------------------------------------------
+void systick_SA1_1_(void) //ubirayem drebezg kontsevica SA1.1
 	
 {		
 		uint8_t temp2;
@@ -62,14 +65,16 @@ void clearSA1_1_Flag(uint8_t num)
 //--------------------------------------------------------------
 void LED_state2_Change(void)
 {
-	if (getSA1_1_Flag(SA_1_1_PRESSED_FLAG)>0)
+	if (getSA1_1_Flag(SA_1_1_PRESSED_FLAG)>0) //esli knopka zazhata
 	{
-				clearSA1_1_Flag(SA_1_1_PRESSED_FLAG);
+				clearSA1_1_Flag(SA_1_1_PRESSED_FLAG);//sbros
+		GREEN_LD6_ON();
 				
 	}
-	if (getSA1_1_Flag(SA_1_1_UNPRESSED_FLAG)>0)
-	{
+	if (getSA1_1_Flag(SA_1_1_UNPRESSED_FLAG)>0) //esli knopka otzhata
+	{ 
 		clearSA1_1_Flag(SA_1_1_UNPRESSED_FLAG);
-		
+		RED_LD10_OFF();
+		GREEN_LD6_OFF();
 	}
 }

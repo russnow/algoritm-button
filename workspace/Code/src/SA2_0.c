@@ -3,6 +3,9 @@ uint8_t counter3=0;
 uint8_t SA2_0_State=0;
 uint8_t SA2_0_Flags[2];
 
+//------------------------------------------------------
+//gasym drebezg
+//------------------------------------------------------
 void systick_SA2_0_(void)
 	
 {		
@@ -62,14 +65,14 @@ void clearSA2_0_Flag(uint8_t num)
 //--------------------------------------------------------------
 void LED_state3_Change(void)
 {
-	if (getSA2_0_Flag(SA_2_0_PRESSED_FLAG)>0)
+	if (getSA2_0_Flag(SA_2_0_PRESSED_FLAG)>0) //esli knopka zazhata 
 	{
-		clearSA2_0_Flag(SA_2_0_PRESSED_FLAG);
-		GPIO_ToggleBits(GPIOE, GPIO_Pin_15);
+		clearSA2_0_Flag(SA_2_0_PRESSED_FLAG); //sbros
+	ORANGE_LD8_ON();
 	}
-	if (getSA2_0_Flag(SA_2_0_UNPRESSED_FLAG)>0)
+	if (getSA2_0_Flag(SA_2_0_UNPRESSED_FLAG)>0) //esli knopka otzhata
 	{
 		clearSA2_0_Flag(SA_2_0_UNPRESSED_FLAG);
-		GPIO_ToggleBits(GPIOE, GPIO_Pin_14);
+		ORANGE_LD8_OFF();
 	}
 }

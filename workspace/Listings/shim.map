@@ -30,7 +30,7 @@ Section Cross References
     main.o(i.main) refers to mcu_ini.o(i.M_2_ini) for M_2_ini
     main.o(i.main) refers to mcu_ini.o(i.M_1_ini) for M_1_ini
     main.o(i.main) refers to system_stm32f30x.o(.data) for SystemCoreClock
-    main.o(i.main) refers to main.o(.data) for Mode_count
+    main.o(i.main) refers to main.o(.data) for Mode
     mcu_ini.o(i.Button_ini) refers to stm32f30x_rcc.o(i.RCC_AHBPeriphClockCmd) for RCC_AHBPeriphClockCmd
     mcu_ini.o(i.Button_ini) refers to stm32f30x_gpio.o(i.GPIO_Init) for GPIO_Init
     mcu_ini.o(i.Buttons_ini) refers to stm32f30x_rcc.o(i.RCC_AHBPeriphClockCmd) for RCC_AHBPeriphClockCmd
@@ -48,9 +48,14 @@ Section Cross References
     pwm.o(i.Systick_PWM) refers to stm32f30x_gpio.o(i.GPIO_SetBits) for GPIO_SetBits
     pwm.o(i.Systick_PWM) refers to stm32f30x_gpio.o(i.GPIO_ResetBits) for GPIO_ResetBits
     pwm.o(i.Systick_PWM) refers to pwm.o(.data) for PWM_Counter
-    buttons.o(i.LED_state_Change) refers to buttons.o(i.getButtonFlag) for getButtonFlag
-    buttons.o(i.LED_state_Change) refers to buttons.o(i.clearButtonFlag) for clearButtonFlag
-    buttons.o(i.LED_state_Change) refers to stm32f30x_gpio.o(i.GPIO_ToggleBits) for GPIO_ToggleBits
+    buttons.o(i.Rezhim1) refers to buttons.o(i.getButtonFlag) for getButtonFlag
+    buttons.o(i.Rezhim1) refers to buttons.o(i.clearButtonFlag) for clearButtonFlag
+    buttons.o(i.Rezhim1) refers to stm32f30x_gpio.o(i.GPIO_SetBits) for GPIO_SetBits
+    buttons.o(i.Rezhim1) refers to stm32f30x_gpio.o(i.GPIO_ResetBits) for GPIO_ResetBits
+    buttons.o(i.Rezhim2) refers to buttons.o(i.getButtonFlag) for getButtonFlag
+    buttons.o(i.Rezhim2) refers to buttons.o(i.clearButtonFlag) for clearButtonFlag
+    buttons.o(i.Rezhim2) refers to stm32f30x_gpio.o(i.GPIO_ResetBits) for GPIO_ResetBits
+    buttons.o(i.Rezhim2) refers to stm32f30x_gpio.o(i.GPIO_SetBits) for GPIO_SetBits
     buttons.o(i.clearButtonFlag) refers to buttons.o(.data) for ButtonFlags
     buttons.o(i.getButtonFlag) refers to buttons.o(.data) for ButtonFlags
     buttons.o(i.systick_button) refers to stm32f30x_gpio.o(i.GPIO_ReadInputDataBit) for GPIO_ReadInputDataBit
@@ -58,26 +63,37 @@ Section Cross References
     kurok.o(i.AK_47) refers to kurok.o(i.getKurokFlag) for getKurokFlag
     kurok.o(i.AK_47) refers to kurok.o(i.clearKurokFlag) for clearKurokFlag
     kurok.o(i.AK_47) refers to stm32f30x_gpio.o(i.GPIO_SetBits) for GPIO_SetBits
+    kurok.o(i.AK_47) refers to stm32f30x_gpio.o(i.GPIO_ResetBits) for GPIO_ResetBits
+    kurok.o(i.Pistol) refers to kurok.o(i.getKurokFlag) for getKurokFlag
+    kurok.o(i.Pistol) refers to kurok.o(i.clearKurokFlag) for clearKurokFlag
+    kurok.o(i.Pistol) refers to stm32f30x_gpio.o(i.GPIO_SetBits) for GPIO_SetBits
+    kurok.o(i.Pistol) refers to sa1_1.o(i.getSA1_1_Flag) for getSA1_1_Flag
+    kurok.o(i.Pistol) refers to sa1_1.o(i.clearSA1_1_Flag) for clearSA1_1_Flag
+    kurok.o(i.Pistol) refers to stm32f30x_gpio.o(i.GPIO_ResetBits) for GPIO_ResetBits
     kurok.o(i.clearKurokFlag) refers to kurok.o(.data) for KurokFlags
     kurok.o(i.getKurokFlag) refers to kurok.o(.data) for KurokFlags
     kurok.o(i.systick_kurok) refers to stm32f30x_gpio.o(i.GPIO_ReadInputDataBit) for GPIO_ReadInputDataBit
     kurok.o(i.systick_kurok) refers to kurok.o(.data) for counter1
     sa1_1.o(i.LED_state2_Change) refers to sa1_1.o(i.getSA1_1_Flag) for getSA1_1_Flag
     sa1_1.o(i.LED_state2_Change) refers to sa1_1.o(i.clearSA1_1_Flag) for clearSA1_1_Flag
+    sa1_1.o(i.LED_state2_Change) refers to stm32f30x_gpio.o(i.GPIO_SetBits) for GPIO_SetBits
+    sa1_1.o(i.LED_state2_Change) refers to stm32f30x_gpio.o(i.GPIO_ResetBits) for GPIO_ResetBits
     sa1_1.o(i.clearSA1_1_Flag) refers to sa1_1.o(.data) for SA1_1_Flags
     sa1_1.o(i.getSA1_1_Flag) refers to sa1_1.o(.data) for SA1_1_Flags
     sa1_1.o(i.systick_SA1_1_) refers to stm32f30x_gpio.o(i.GPIO_ReadInputDataBit) for GPIO_ReadInputDataBit
     sa1_1.o(i.systick_SA1_1_) refers to sa1_1.o(.data) for counter2
     sa2_0.o(i.LED_state3_Change) refers to sa2_0.o(i.getSA2_0_Flag) for getSA2_0_Flag
     sa2_0.o(i.LED_state3_Change) refers to sa2_0.o(i.clearSA2_0_Flag) for clearSA2_0_Flag
-    sa2_0.o(i.LED_state3_Change) refers to stm32f30x_gpio.o(i.GPIO_ToggleBits) for GPIO_ToggleBits
+    sa2_0.o(i.LED_state3_Change) refers to stm32f30x_gpio.o(i.GPIO_SetBits) for GPIO_SetBits
+    sa2_0.o(i.LED_state3_Change) refers to stm32f30x_gpio.o(i.GPIO_ResetBits) for GPIO_ResetBits
     sa2_0.o(i.clearSA2_0_Flag) refers to sa2_0.o(.data) for SA2_0_Flags
     sa2_0.o(i.getSA2_0_Flag) refers to sa2_0.o(.data) for SA2_0_Flags
     sa2_0.o(i.systick_SA2_0_) refers to stm32f30x_gpio.o(i.GPIO_ReadInputDataBit) for GPIO_ReadInputDataBit
     sa2_0.o(i.systick_SA2_0_) refers to sa2_0.o(.data) for counter3
     sa2_1.o(i.LED_state4_Change) refers to sa2_1.o(i.getSA2_1_Flag) for getSA2_1_Flag
     sa2_1.o(i.LED_state4_Change) refers to sa2_1.o(i.clearSA2_1_Flag) for clearSA2_1_Flag
-    sa2_1.o(i.LED_state4_Change) refers to stm32f30x_gpio.o(i.GPIO_ToggleBits) for GPIO_ToggleBits
+    sa2_1.o(i.LED_state4_Change) refers to stm32f30x_gpio.o(i.GPIO_SetBits) for GPIO_SetBits
+    sa2_1.o(i.LED_state4_Change) refers to stm32f30x_gpio.o(i.GPIO_ResetBits) for GPIO_ResetBits
     sa2_1.o(i.clearSA2_1_Flag) refers to sa2_1.o(.data) for SA2_1_Flags
     sa2_1.o(i.getSA2_1_Flag) refers to sa2_1.o(.data) for SA2_1_Flags
     sa2_1.o(i.systick_SA2_1_) refers to stm32f30x_gpio.o(i.GPIO_ReadInputDataBit) for GPIO_ReadInputDataBit
@@ -316,19 +332,21 @@ Removing Unused input sections from the image.
     Removing buttons.o(.rev16_text), (4 bytes).
     Removing buttons.o(.revsh_text), (4 bytes).
     Removing buttons.o(.rrx_text), (6 bytes).
-    Removing buttons.o(i.LED_state_Change), (60 bytes).
+    Removing buttons.o(i.Rezhim1), (60 bytes).
+    Removing buttons.o(i.Rezhim2), (60 bytes).
     Removing buttons.o(i.clearButtonFlag), (24 bytes).
     Removing buttons.o(i.getButtonFlag), (12 bytes).
     Removing kurok.o(.rev16_text), (4 bytes).
     Removing kurok.o(.revsh_text), (4 bytes).
     Removing kurok.o(.rrx_text), (6 bytes).
     Removing kurok.o(i.AK_47), (60 bytes).
+    Removing kurok.o(i.Pistol), (60 bytes).
     Removing kurok.o(i.clearKurokFlag), (24 bytes).
     Removing kurok.o(i.getKurokFlag), (12 bytes).
     Removing sa1_1.o(.rev16_text), (4 bytes).
     Removing sa1_1.o(.revsh_text), (4 bytes).
     Removing sa1_1.o(.rrx_text), (6 bytes).
-    Removing sa1_1.o(i.LED_state2_Change), (36 bytes).
+    Removing sa1_1.o(i.LED_state2_Change), (72 bytes).
     Removing sa1_1.o(i.clearSA1_1_Flag), (24 bytes).
     Removing sa1_1.o(i.getSA1_1_Flag), (12 bytes).
     Removing sa2_0.o(.rev16_text), (4 bytes).
@@ -1094,7 +1112,7 @@ Removing Unused input sections from the image.
     Removing stm32f30x_wwdg.o(i.WWDG_SetPrescaler), (24 bytes).
     Removing stm32f30x_wwdg.o(i.WWDG_SetWindowValue), (40 bytes).
 
-800 unused section(s) (total 34327 bytes) removed from the image.
+802 unused section(s) (total 34483 bytes) removed from the image.
 
 ==============================================================================
 
@@ -1288,26 +1306,26 @@ Image Symbol Table
     i.SysTick_Handler                        0x08000570   Section        0  main.o(i.SysTick_Handler)
     i.SystemInit                             0x080005b4   Section        0  system_stm32f30x.o(i.SystemInit)
     i.main                                   0x08000638   Section        0  main.o(i.main)
-    i.systick_SA1_1_                         0x080006c0   Section        0  sa1_1.o(i.systick_SA1_1_)
-    i.systick_SA2_0_                         0x0800073c   Section        0  sa2_0.o(i.systick_SA2_0_)
-    i.systick_SA2_1_                         0x080007b8   Section        0  sa2_1.o(i.systick_SA2_1_)
-    i.systick_button                         0x08000834   Section        0  buttons.o(i.systick_button)
-    i.systick_kurok                          0x080008ac   Section        0  kurok.o(i.systick_kurok)
-    x$fpl$fpinit                             0x08000928   Section       10  fpinit.o(x$fpl$fpinit)
-    $v0                                      0x08000928   Number         0  fpinit.o(x$fpl$fpinit)
+    i.systick_SA1_1_                         0x080006bc   Section        0  sa1_1.o(i.systick_SA1_1_)
+    i.systick_SA2_0_                         0x08000738   Section        0  sa2_0.o(i.systick_SA2_0_)
+    i.systick_SA2_1_                         0x080007b4   Section        0  sa2_1.o(i.systick_SA2_1_)
+    i.systick_button                         0x08000830   Section        0  buttons.o(i.systick_button)
+    i.systick_kurok                          0x080008a8   Section        0  kurok.o(i.systick_kurok)
+    x$fpl$fpinit                             0x08000924   Section       10  fpinit.o(x$fpl$fpinit)
+    $v0                                      0x08000924   Number         0  fpinit.o(x$fpl$fpinit)
     .data                                    0x20000000   Section       20  system_stm32f30x.o(.data)
     .data                                    0x20000014   Section        7  main.o(.data)
-    .data                                    0x2000001b   Section       10  buttons.o(.data)
-    .data                                    0x20000025   Section        4  kurok.o(.data)
-    .data                                    0x20000029   Section        4  sa1_1.o(.data)
-    .data                                    0x2000002d   Section        4  sa2_0.o(.data)
-    .data                                    0x20000031   Section        4  sa2_1.o(.data)
-    .bss                                     0x20000038   Section       96  libspace.o(.bss)
-    HEAP                                     0x20000098   Section      512  startup_stm32f303xc.o(HEAP)
-    Heap_Mem                                 0x20000098   Data         512  startup_stm32f303xc.o(HEAP)
-    STACK                                    0x20000298   Section     1024  startup_stm32f303xc.o(STACK)
-    Stack_Mem                                0x20000298   Data        1024  startup_stm32f303xc.o(STACK)
-    __initial_sp                             0x20000698   Data           0  startup_stm32f303xc.o(STACK)
+    .data                                    0x2000001b   Section        4  buttons.o(.data)
+    .data                                    0x2000001f   Section        4  kurok.o(.data)
+    .data                                    0x20000023   Section        4  sa1_1.o(.data)
+    .data                                    0x20000027   Section        4  sa2_0.o(.data)
+    .data                                    0x2000002b   Section        4  sa2_1.o(.data)
+    .bss                                     0x20000030   Section       96  libspace.o(.bss)
+    HEAP                                     0x20000090   Section      512  startup_stm32f303xc.o(HEAP)
+    Heap_Mem                                 0x20000090   Data         512  startup_stm32f303xc.o(HEAP)
+    STACK                                    0x20000290   Section     1024  startup_stm32f303xc.o(STACK)
+    Stack_Mem                                0x20000290   Data        1024  startup_stm32f303xc.o(STACK)
+    __initial_sp                             0x20000690   Data           0  startup_stm32f303xc.o(STACK)
 
     Global Symbols
 
@@ -1493,45 +1511,39 @@ Image Symbol Table
     SysTick_Handler                          0x08000571   Thumb Code    60  main.o(i.SysTick_Handler)
     SystemInit                               0x080005b5   Thumb Code   112  system_stm32f30x.o(i.SystemInit)
     main                                     0x08000639   Thumb Code   116  main.o(i.main)
-    systick_SA1_1_                           0x080006c1   Thumb Code   106  sa1_1.o(i.systick_SA1_1_)
-    systick_SA2_0_                           0x0800073d   Thumb Code   106  sa2_0.o(i.systick_SA2_0_)
-    systick_SA2_1_                           0x080007b9   Thumb Code   106  sa2_1.o(i.systick_SA2_1_)
-    systick_button                           0x08000835   Thumb Code   106  buttons.o(i.systick_button)
-    systick_kurok                            0x080008ad   Thumb Code   106  kurok.o(i.systick_kurok)
-    _fp_init                                 0x08000929   Thumb Code    10  fpinit.o(x$fpl$fpinit)
-    __fplib_config_fpu_vfp                   0x08000931   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    __fplib_config_pureend_doubles           0x08000931   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    Region$$Table$$Base                      0x08000934   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08000954   Number         0  anon$$obj.o(Region$$Table)
+    systick_SA1_1_                           0x080006bd   Thumb Code   106  sa1_1.o(i.systick_SA1_1_)
+    systick_SA2_0_                           0x08000739   Thumb Code   106  sa2_0.o(i.systick_SA2_0_)
+    systick_SA2_1_                           0x080007b5   Thumb Code   106  sa2_1.o(i.systick_SA2_1_)
+    systick_button                           0x08000831   Thumb Code   106  buttons.o(i.systick_button)
+    systick_kurok                            0x080008a9   Thumb Code   106  kurok.o(i.systick_kurok)
+    _fp_init                                 0x08000925   Thumb Code    10  fpinit.o(x$fpl$fpinit)
+    __fplib_config_fpu_vfp                   0x0800092d   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    __fplib_config_pureend_doubles           0x0800092d   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    Region$$Table$$Base                      0x08000930   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08000950   Number         0  anon$$obj.o(Region$$Table)
     SystemCoreClock                          0x20000000   Data           4  system_stm32f30x.o(.data)
     AHBPrescTable                            0x20000004   Data          16  system_stm32f30x.o(.data)
     delay_count                              0x20000014   Data           2  main.o(.data)
     Mode                                     0x20000016   Data           1  main.o(.data)
     Mode_count                               0x20000018   Data           2  main.o(.data)
     Mode_new                                 0x2000001a   Data           1  main.o(.data)
-    Pistolet                                 0x2000001b   Data           1  buttons.o(.data)
-    Pulemet                                  0x2000001c   Data           1  buttons.o(.data)
-    Mode_vkl                                 0x2000001d   Data           1  buttons.o(.data)
-    Mode_counter                             0x2000001e   Data           1  buttons.o(.data)
-    Button_count                             0x2000001f   Data           1  buttons.o(.data)
-    Button_state                             0x20000020   Data           1  buttons.o(.data)
-    counter                                  0x20000021   Data           1  buttons.o(.data)
-    ButtonState                              0x20000022   Data           1  buttons.o(.data)
-    ButtonFlags                              0x20000023   Data           2  buttons.o(.data)
-    counter1                                 0x20000025   Data           1  kurok.o(.data)
-    KurokState                               0x20000026   Data           1  kurok.o(.data)
-    KurokFlags                               0x20000027   Data           2  kurok.o(.data)
-    counter2                                 0x20000029   Data           1  sa1_1.o(.data)
-    SA1_1_State                              0x2000002a   Data           1  sa1_1.o(.data)
-    SA1_1_Flags                              0x2000002b   Data           2  sa1_1.o(.data)
-    counter3                                 0x2000002d   Data           1  sa2_0.o(.data)
-    SA2_0_State                              0x2000002e   Data           1  sa2_0.o(.data)
-    SA2_0_Flags                              0x2000002f   Data           2  sa2_0.o(.data)
-    counter4                                 0x20000031   Data           1  sa2_1.o(.data)
-    SA2_1_State                              0x20000032   Data           1  sa2_1.o(.data)
-    SA2_1_Flags                              0x20000033   Data           2  sa2_1.o(.data)
-    __libspace_start                         0x20000038   Data          96  libspace.o(.bss)
-    __temporary_stack_top$libspace           0x20000098   Data           0  libspace.o(.bss)
+    counter                                  0x2000001b   Data           1  buttons.o(.data)
+    ButtonState                              0x2000001c   Data           1  buttons.o(.data)
+    ButtonFlags                              0x2000001d   Data           2  buttons.o(.data)
+    counter1                                 0x2000001f   Data           1  kurok.o(.data)
+    KurokState                               0x20000020   Data           1  kurok.o(.data)
+    KurokFlags                               0x20000021   Data           2  kurok.o(.data)
+    counter2                                 0x20000023   Data           1  sa1_1.o(.data)
+    SA1_1_State                              0x20000024   Data           1  sa1_1.o(.data)
+    SA1_1_Flags                              0x20000025   Data           2  sa1_1.o(.data)
+    counter3                                 0x20000027   Data           1  sa2_0.o(.data)
+    SA2_0_State                              0x20000028   Data           1  sa2_0.o(.data)
+    SA2_0_Flags                              0x20000029   Data           2  sa2_0.o(.data)
+    counter4                                 0x2000002b   Data           1  sa2_1.o(.data)
+    SA2_1_State                              0x2000002c   Data           1  sa2_1.o(.data)
+    SA2_1_Flags                              0x2000002d   Data           2  sa2_1.o(.data)
+    __libspace_start                         0x20000030   Data          96  libspace.o(.bss)
+    __temporary_stack_top$libspace           0x20000090   Data           0  libspace.o(.bss)
 
 
 
@@ -1541,112 +1553,112 @@ Memory Map of the image
 
   Image Entry point : 0x08000229
 
-  Load Region LR_1 (Base: 0x08000000, Size: 0x0000098c, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x08000000, Size: 0x00000980, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00000954, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00000950, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x08000000   0x08000000   0x00000188   Data   RO            3    RESET               startup_stm32f303xc.o
-    0x08000188   0x08000188   0x00000008   Code   RO         5062  * !!!main             c_w.l(__main.o)
-    0x08000190   0x08000190   0x00000034   Code   RO         5219    !!!scatter          c_w.l(__scatter.o)
-    0x080001c4   0x080001c4   0x0000001a   Code   RO         5221    !!handler_copy      c_w.l(__scatter_copy.o)
+    0x08000188   0x08000188   0x00000008   Code   RO         5074  * !!!main             c_w.l(__main.o)
+    0x08000190   0x08000190   0x00000034   Code   RO         5231    !!!scatter          c_w.l(__scatter.o)
+    0x080001c4   0x080001c4   0x0000001a   Code   RO         5233    !!handler_copy      c_w.l(__scatter_copy.o)
     0x080001de   0x080001de   0x00000002   PAD
-    0x080001e0   0x080001e0   0x0000001c   Code   RO         5223    !!handler_zi        c_w.l(__scatter_zi.o)
-    0x080001fc   0x080001fc   0x00000002   Code   RO         5089    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
-    0x080001fe   0x080001fe   0x00000004   Code   RO         5095    .ARM.Collect$$libinit$$00000001  c_w.l(libinit2.o)
-    0x08000202   0x08000202   0x00000000   Code   RO         5098    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
-    0x08000202   0x08000202   0x00000000   Code   RO         5101    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
-    0x08000202   0x08000202   0x00000000   Code   RO         5103    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
-    0x08000202   0x08000202   0x00000000   Code   RO         5105    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
-    0x08000202   0x08000202   0x00000000   Code   RO         5108    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
-    0x08000202   0x08000202   0x00000000   Code   RO         5110    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
-    0x08000202   0x08000202   0x00000000   Code   RO         5112    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
-    0x08000202   0x08000202   0x00000000   Code   RO         5114    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
-    0x08000202   0x08000202   0x00000000   Code   RO         5116    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
-    0x08000202   0x08000202   0x00000000   Code   RO         5118    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
-    0x08000202   0x08000202   0x00000000   Code   RO         5120    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
-    0x08000202   0x08000202   0x00000000   Code   RO         5122    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
-    0x08000202   0x08000202   0x00000000   Code   RO         5124    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
-    0x08000202   0x08000202   0x00000000   Code   RO         5126    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
-    0x08000202   0x08000202   0x00000000   Code   RO         5128    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
-    0x08000202   0x08000202   0x00000000   Code   RO         5132    .ARM.Collect$$libinit$$0000002C  c_w.l(libinit2.o)
-    0x08000202   0x08000202   0x00000000   Code   RO         5134    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
-    0x08000202   0x08000202   0x00000000   Code   RO         5136    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
-    0x08000202   0x08000202   0x00000000   Code   RO         5138    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
-    0x08000202   0x08000202   0x00000002   Code   RO         5139    .ARM.Collect$$libinit$$00000033  c_w.l(libinit2.o)
-    0x08000204   0x08000204   0x00000002   Code   RO         5159    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
-    0x08000206   0x08000206   0x00000000   Code   RO         5172    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
-    0x08000206   0x08000206   0x00000000   Code   RO         5174    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
-    0x08000206   0x08000206   0x00000000   Code   RO         5177    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
-    0x08000206   0x08000206   0x00000000   Code   RO         5180    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
-    0x08000206   0x08000206   0x00000000   Code   RO         5182    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
-    0x08000206   0x08000206   0x00000000   Code   RO         5185    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
-    0x08000206   0x08000206   0x00000002   Code   RO         5186    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
-    0x08000208   0x08000208   0x00000000   Code   RO         5064    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
-    0x08000208   0x08000208   0x00000000   Code   RO         5066    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
-    0x08000208   0x08000208   0x00000006   Code   RO         5078    .ARM.Collect$$rtentry$$00000004  c_w.l(__rtentry4.o)
-    0x0800020e   0x0800020e   0x00000000   Code   RO         5068    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
-    0x0800020e   0x0800020e   0x00000004   Code   RO         5069    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
-    0x08000212   0x08000212   0x00000000   Code   RO         5071    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
-    0x08000212   0x08000212   0x00000008   Code   RO         5072    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
-    0x0800021a   0x0800021a   0x00000002   Code   RO         5093    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
-    0x0800021c   0x0800021c   0x00000000   Code   RO         5141    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
-    0x0800021c   0x0800021c   0x00000004   Code   RO         5142    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
-    0x08000220   0x08000220   0x00000006   Code   RO         5143    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
+    0x080001e0   0x080001e0   0x0000001c   Code   RO         5235    !!handler_zi        c_w.l(__scatter_zi.o)
+    0x080001fc   0x080001fc   0x00000002   Code   RO         5101    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
+    0x080001fe   0x080001fe   0x00000004   Code   RO         5107    .ARM.Collect$$libinit$$00000001  c_w.l(libinit2.o)
+    0x08000202   0x08000202   0x00000000   Code   RO         5110    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
+    0x08000202   0x08000202   0x00000000   Code   RO         5113    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
+    0x08000202   0x08000202   0x00000000   Code   RO         5115    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
+    0x08000202   0x08000202   0x00000000   Code   RO         5117    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
+    0x08000202   0x08000202   0x00000000   Code   RO         5120    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
+    0x08000202   0x08000202   0x00000000   Code   RO         5122    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
+    0x08000202   0x08000202   0x00000000   Code   RO         5124    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
+    0x08000202   0x08000202   0x00000000   Code   RO         5126    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
+    0x08000202   0x08000202   0x00000000   Code   RO         5128    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
+    0x08000202   0x08000202   0x00000000   Code   RO         5130    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
+    0x08000202   0x08000202   0x00000000   Code   RO         5132    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
+    0x08000202   0x08000202   0x00000000   Code   RO         5134    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
+    0x08000202   0x08000202   0x00000000   Code   RO         5136    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
+    0x08000202   0x08000202   0x00000000   Code   RO         5138    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
+    0x08000202   0x08000202   0x00000000   Code   RO         5140    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
+    0x08000202   0x08000202   0x00000000   Code   RO         5144    .ARM.Collect$$libinit$$0000002C  c_w.l(libinit2.o)
+    0x08000202   0x08000202   0x00000000   Code   RO         5146    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
+    0x08000202   0x08000202   0x00000000   Code   RO         5148    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
+    0x08000202   0x08000202   0x00000000   Code   RO         5150    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
+    0x08000202   0x08000202   0x00000002   Code   RO         5151    .ARM.Collect$$libinit$$00000033  c_w.l(libinit2.o)
+    0x08000204   0x08000204   0x00000002   Code   RO         5171    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
+    0x08000206   0x08000206   0x00000000   Code   RO         5184    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
+    0x08000206   0x08000206   0x00000000   Code   RO         5186    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
+    0x08000206   0x08000206   0x00000000   Code   RO         5189    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
+    0x08000206   0x08000206   0x00000000   Code   RO         5192    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
+    0x08000206   0x08000206   0x00000000   Code   RO         5194    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
+    0x08000206   0x08000206   0x00000000   Code   RO         5197    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
+    0x08000206   0x08000206   0x00000002   Code   RO         5198    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
+    0x08000208   0x08000208   0x00000000   Code   RO         5076    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
+    0x08000208   0x08000208   0x00000000   Code   RO         5078    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
+    0x08000208   0x08000208   0x00000006   Code   RO         5090    .ARM.Collect$$rtentry$$00000004  c_w.l(__rtentry4.o)
+    0x0800020e   0x0800020e   0x00000000   Code   RO         5080    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
+    0x0800020e   0x0800020e   0x00000004   Code   RO         5081    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
+    0x08000212   0x08000212   0x00000000   Code   RO         5083    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
+    0x08000212   0x08000212   0x00000008   Code   RO         5084    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
+    0x0800021a   0x0800021a   0x00000002   Code   RO         5105    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
+    0x0800021c   0x0800021c   0x00000000   Code   RO         5153    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
+    0x0800021c   0x0800021c   0x00000004   Code   RO         5154    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
+    0x08000220   0x08000220   0x00000006   Code   RO         5155    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
     0x08000226   0x08000226   0x00000002   PAD
     0x08000228   0x08000228   0x00000040   Code   RO            4  * .text               startup_stm32f303xc.o
-    0x08000268   0x08000268   0x00000006   Code   RO         5060    .text               c_w.l(heapauxi.o)
-    0x0800026e   0x0800026e   0x0000004a   Code   RO         5080    .text               c_w.l(sys_stackheap_outer.o)
-    0x080002b8   0x080002b8   0x00000012   Code   RO         5082    .text               c_w.l(exit.o)
+    0x08000268   0x08000268   0x00000006   Code   RO         5072    .text               c_w.l(heapauxi.o)
+    0x0800026e   0x0800026e   0x0000004a   Code   RO         5092    .text               c_w.l(sys_stackheap_outer.o)
+    0x080002b8   0x080002b8   0x00000012   Code   RO         5094    .text               c_w.l(exit.o)
     0x080002ca   0x080002ca   0x00000002   PAD
-    0x080002cc   0x080002cc   0x00000008   Code   RO         5090    .text               c_w.l(libspace.o)
-    0x080002d4   0x080002d4   0x0000000c   Code   RO         5151    .text               c_w.l(sys_exit.o)
-    0x080002e0   0x080002e0   0x00000002   Code   RO         5162    .text               c_w.l(use_no_semi.o)
-    0x080002e2   0x080002e2   0x00000000   Code   RO         5164    .text               c_w.l(indicate_semi.o)
+    0x080002cc   0x080002cc   0x00000008   Code   RO         5102    .text               c_w.l(libspace.o)
+    0x080002d4   0x080002d4   0x0000000c   Code   RO         5163    .text               c_w.l(sys_exit.o)
+    0x080002e0   0x080002e0   0x00000002   Code   RO         5174    .text               c_w.l(use_no_semi.o)
+    0x080002e2   0x080002e2   0x00000000   Code   RO         5176    .text               c_w.l(indicate_semi.o)
     0x080002e2   0x080002e2   0x00000030   Code   RO          166    i.Button_ini        mcu_ini.o
     0x08000312   0x08000312   0x00000002   PAD
     0x08000314   0x08000314   0x00000034   Code   RO          167    i.Buttons_ini       mcu_ini.o
-    0x08000348   0x08000348   0x00000096   Code   RO         1905    i.GPIO_Init         stm32f30x_gpio.o
-    0x080003de   0x080003de   0x00000012   Code   RO         1909    i.GPIO_ReadInputDataBit  stm32f30x_gpio.o
+    0x08000348   0x08000348   0x00000096   Code   RO         1917    i.GPIO_Init         stm32f30x_gpio.o
+    0x080003de   0x080003de   0x00000012   Code   RO         1921    i.GPIO_ReadInputDataBit  stm32f30x_gpio.o
     0x080003f0   0x080003f0   0x00000034   Code   RO          168    i.LEDs_ini          mcu_ini.o
     0x08000424   0x08000424   0x00000034   Code   RO          169    i.M_1_ini           mcu_ini.o
     0x08000458   0x08000458   0x00000034   Code   RO          170    i.M_2_ini           mcu_ini.o
-    0x0800048c   0x0800048c   0x00000020   Code   RO         3056    i.RCC_AHBPeriphClockCmd  stm32f30x_rcc.o
+    0x0800048c   0x0800048c   0x00000020   Code   RO         3068    i.RCC_AHBPeriphClockCmd  stm32f30x_rcc.o
     0x080004ac   0x080004ac   0x000000c4   Code   RO           13    i.SetSysClock       system_stm32f30x.o
     0x08000570   0x08000570   0x00000044   Code   RO           74    i.SysTick_Handler   main.o
     0x080005b4   0x080005b4   0x00000084   Code   RO           15    i.SystemInit        system_stm32f30x.o
-    0x08000638   0x08000638   0x00000088   Code   RO           76    i.main              main.o
-    0x080006c0   0x080006c0   0x0000007c   Code   RO          362    i.systick_SA1_1_    sa1_1.o
-    0x0800073c   0x0800073c   0x0000007c   Code   RO          407    i.systick_SA2_0_    sa2_0.o
-    0x080007b8   0x080007b8   0x0000007c   Code   RO          452    i.systick_SA2_1_    sa2_1.o
-    0x08000834   0x08000834   0x00000078   Code   RO          272    i.systick_button    buttons.o
-    0x080008ac   0x080008ac   0x0000007c   Code   RO          317    i.systick_kurok     kurok.o
-    0x08000928   0x08000928   0x0000000a   Code   RO         5149    x$fpl$fpinit        fz_wm.l(fpinit.o)
-    0x08000932   0x08000932   0x00000002   PAD
-    0x08000934   0x08000934   0x00000020   Data   RO         5217    Region$$Table       anon$$obj.o
+    0x08000638   0x08000638   0x00000084   Code   RO           76    i.main              main.o
+    0x080006bc   0x080006bc   0x0000007c   Code   RO          374    i.systick_SA1_1_    sa1_1.o
+    0x08000738   0x08000738   0x0000007c   Code   RO          419    i.systick_SA2_0_    sa2_0.o
+    0x080007b4   0x080007b4   0x0000007c   Code   RO          464    i.systick_SA2_1_    sa2_1.o
+    0x08000830   0x08000830   0x00000078   Code   RO          273    i.systick_button    buttons.o
+    0x080008a8   0x080008a8   0x0000007c   Code   RO          324    i.systick_kurok     kurok.o
+    0x08000924   0x08000924   0x0000000a   Code   RO         5161    x$fpl$fpinit        fz_wm.l(fpinit.o)
+    0x0800092e   0x0800092e   0x00000002   PAD
+    0x08000930   0x08000930   0x00000020   Data   RO         5229    Region$$Table       anon$$obj.o
 
 
-    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x08000954, Size: 0x00000038, Max: 0xffffffff, ABSOLUTE)
-
-    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
-
-    0x20000000   0x08000954   0x00000014   Data   RW           16    .data               system_stm32f30x.o
-    0x20000014   0x08000968   0x00000007   Data   RW           77    .data               main.o
-    0x2000001b   0x0800096f   0x0000000a   Data   RW          273    .data               buttons.o
-    0x20000025   0x08000979   0x00000004   Data   RW          318    .data               kurok.o
-    0x20000029   0x0800097d   0x00000004   Data   RW          363    .data               sa1_1.o
-    0x2000002d   0x08000981   0x00000004   Data   RW          408    .data               sa2_0.o
-    0x20000031   0x08000985   0x00000004   Data   RW          453    .data               sa2_1.o
-
-
-    Execution Region ER_ZI (Exec base: 0x20000038, Load base: 0x0800098c, Size: 0x00000660, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x08000950, Size: 0x00000030, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000038        -       0x00000060   Zero   RW         5091    .bss                c_w.l(libspace.o)
-    0x20000098        -       0x00000200   Zero   RW            2    HEAP                startup_stm32f303xc.o
-    0x20000298        -       0x00000400   Zero   RW            1    STACK               startup_stm32f303xc.o
+    0x20000000   0x08000950   0x00000014   Data   RW           16    .data               system_stm32f30x.o
+    0x20000014   0x08000964   0x00000007   Data   RW           77    .data               main.o
+    0x2000001b   0x0800096b   0x00000004   Data   RW          274    .data               buttons.o
+    0x2000001f   0x0800096f   0x00000004   Data   RW          325    .data               kurok.o
+    0x20000023   0x08000973   0x00000004   Data   RW          375    .data               sa1_1.o
+    0x20000027   0x08000977   0x00000004   Data   RW          420    .data               sa2_0.o
+    0x2000002b   0x0800097b   0x00000004   Data   RW          465    .data               sa2_1.o
+
+
+    Execution Region ER_ZI (Exec base: 0x20000030, Load base: 0x08000980, Size: 0x00000660, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000030        -       0x00000060   Zero   RW         5103    .bss                c_w.l(libspace.o)
+    0x20000090        -       0x00000200   Zero   RW            2    HEAP                startup_stm32f303xc.o
+    0x20000290        -       0x00000400   Zero   RW            1    STACK               startup_stm32f303xc.o
 
 
 ==============================================================================
@@ -1656,9 +1668,9 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       120         14          0         10          0       1484   buttons.o
+       120         14          0          4          0       1251   buttons.o
        124         18          0          4          0       1233   kurok.o
-       204         28          0          7          0     316135   main.o
+       200         24          0          7          0     316199   main.o
        256         16          0          0          0       2570   mcu_ini.o
        124         18          0          4          0       1240   sa1_1.o
        124         18          0          4          0       1240   sa2_0.o
@@ -1669,9 +1681,9 @@ Image component sizes
        328         28          0         20          0     289745   system_stm32f30x.o
 
     ----------------------------------------------------------------------
-      1670        190        424         56       1536     618191   Object Totals
+      1666        186        424         48       1536     618022   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-         2          0          0          3          0          0   (incl. Padding)
+         2          0          0          1          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -1720,15 +1732,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      1964        206        424         56       1632     617235   Grand Totals
-      1964        206        424         56       1632     617235   ELF Image Totals
-      1964        206        424         56          0          0   ROM Totals
+      1960        202        424         48       1632     617066   Grand Totals
+      1960        202        424         48       1632     617066   ELF Image Totals
+      1960        202        424         48          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 2388 (   2.33kB)
-    Total RW  Size (RW Data + ZI Data)              1688 (   1.65kB)
-    Total ROM Size (Code + RO Data + RW Data)       2444 (   2.39kB)
+    Total RO  Size (Code + RO Data)                 2384 (   2.33kB)
+    Total RW  Size (RW Data + ZI Data)              1680 (   1.64kB)
+    Total ROM Size (Code + RO Data + RW Data)       2432 (   2.38kB)
 
 ==============================================================================
 

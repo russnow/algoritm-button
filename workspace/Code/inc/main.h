@@ -59,8 +59,8 @@
 //-------------------------
 //rezhim oryzhiya
 //-------------------------
-#define MODE_PISTOLET 	8
-#define MODE_AK_47			9
+#define MODE_PISTOLET 	0
+#define MODE_AK_47			1
 
 //-------------------------------------------------------------
 //Zadayom funkthiyu chteniya knopke user
