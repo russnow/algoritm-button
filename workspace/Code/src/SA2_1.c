@@ -65,9 +65,9 @@ void clearSA2_1_Flag(uint8_t num)
 //--------------------------------------------------------------
 void LED_state4_Change(void)
 {
-	if (getSA2_1_Flag(SA_2_1_PRESSED_FLAG)>0) //esli knopka zazhata
+	if (getSA2_1_Flag(BUTTON_PRESSED_FLAG)>0) //esli knopka zazhata
 	{
-		clearSA2_1_Flag(SA_2_1_PRESSED_FLAG); //sbros
+		clearSA2_1_Flag(BUTTON_PRESSED_FLAG); //sbros
 		BLUE_LD9_ON();
 	}
 	if (getSA2_1_Flag(SA_2_1_UNPRESSED_FLAG)>0) //esli knopka otzhata

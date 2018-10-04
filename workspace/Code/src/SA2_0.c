@@ -65,9 +65,9 @@ void clearSA2_0_Flag(uint8_t num)
 //--------------------------------------------------------------
 void LED_state3_Change(void)
 {
-	if (getSA2_0_Flag(SA_2_0_PRESSED_FLAG)>0) //esli knopka zazhata 
+	if (getSA2_0_Flag(BUTTON_PRESSED_FLAG)>0) //esli knopka zazhata 
 	{
-		clearSA2_0_Flag(SA_2_0_PRESSED_FLAG); //sbros
+		clearSA2_0_Flag(BUTTON_PRESSED_FLAG); //sbros
 	ORANGE_LD8_ON();
 	}
 	if (getSA2_0_Flag(SA_2_0_UNPRESSED_FLAG)>0) //esli knopka otzhata

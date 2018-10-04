@@ -79,16 +79,15 @@ int main (void)
 			{ 
 				//AK_47();
 				//Pistol();
+				//Rezhim1();
 				
 				
-				
-			/*	if(Mode==MODE_PISTOLET)
+			if(Mode==MODE_PISTOLET)
 				{	
 				Mode_new=0;
 				Rezhim1();
 				Mode=MODE_AK_47;
-					
-
+	
 				}	
 					
 			else	if(Mode==MODE_AK_47)
@@ -96,22 +95,25 @@ int main (void)
 				Mode_new=1;
 				Rezhim2();
 				Mode=MODE_PISTOLET;
-			
+	
 				}
-									if (Mode_new==0)
+									/*if (Mode_new==0)
 												{
 													Pistol();
+												
 												}
 												
-												else if(Mode_new==1)
+								 if(Mode_new==1)
 												{
 													AK_47();
+												
 												}
+												*/
 												
+											}
+}			
 												
-												
-												
-												if(puli>net_patronov )
+												/*if(puli>net_patronov )
 	{
 		puli--;
 		Pistol();
@@ -137,11 +139,11 @@ int main (void)
 					//GREEN_LD6_OFF();
 			}
 
-					}*/
+					}
 	
 			}
 			
-	}
+	}*/
 
 				
 				//LED_state4_Change();

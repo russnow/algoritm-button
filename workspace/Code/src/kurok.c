@@ -63,15 +63,18 @@ void clearKurokFlag(uint8_t num)
 //--------------------------------------------------------------
 //
 //--------------------------------------------------------------
+uint8_t flag_sa11=0;
+uint8_t flags_sa11=0;
 void AK_47(void) //rezhim avtomata
 {
 	if (getKurokFlag(KUROK_PRESSED_FLAG)>0)
 	{
-		
+		flags_sa11=1;
 		clearKurokFlag(KUROK_PRESSED_FLAG);
 		//EN_2_ON();
 		//IN_3_ON();
 		RED_LD10_ON();
+		
 	}
 	
 	if (getKurokFlag(KUROK_UNPRESSED_FLAG)>0)
@@ -81,10 +84,20 @@ void AK_47(void) //rezhim avtomata
 	//{
 		//clearSA1_1_Flag(SA_1_1_UNPRESSED_FLAG);
 		clearKurokFlag(KUROK_UNPRESSED_FLAG);
-		RED_LD10_OFF();
+		clearSA1_1_Flag(SA_1_1_UNPRESSED_FLAG);
+		//RED_LD10_OFF();
+		flag_sa11=1;
 		//LED_state2_Change();
 	}
-		
+	if (flag_sa11==1)
+	{
+		if (getSA1_1_Flag(SA_1_1_UNPRESSED_FLAG)>0)
+		{
+			RED_LD10_OFF();
+			clearSA1_1_Flag(SA_1_1_UNPRESSED_FLAG);
+			flag_sa11=0;
+		}
+	}
 		//EN_2_OFF();
 		//IN_3_OFF();
 	//	RED_LD10_OFF();

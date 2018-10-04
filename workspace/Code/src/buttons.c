@@ -143,7 +143,7 @@ void Rezhim1(void) //menyaem natyazhenie pryzhiny
 					
 				GREEN_LD6_ON();
 				ORANGE_LD8_OFF();
-				
+				AK_47();
 				
 			}
 				if (getButtonFlag(BUTTON_UNPRESSED_FLAG)>0)
@@ -174,7 +174,7 @@ void Rezhim1(void) //menyaem natyazhenie pryzhiny
 			if (getButtonFlag(BUTTON_PRESSED_FLAG)>0)
 			{
 				clearButtonFlag(BUTTON_PRESSED_FLAG);
-					
+					Pistol();
 				GREEN_LD6_OFF();
 				ORANGE_LD8_ON();
 				
